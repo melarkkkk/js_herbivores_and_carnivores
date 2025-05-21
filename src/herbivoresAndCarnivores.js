@@ -24,7 +24,7 @@ class Herbivore extends Animal {
 
 class Carnivore extends Animal {
   bite(victim) {
-    if (!victim.hidden && !(victim instanceof Carnivore)) {
+    if (victim instanceof Herbivore && !victim.hidden) {
       victim.health -= 50;
     }
 
